@@ -2,6 +2,19 @@ import pandas as pd
 from scipy.stats import ttest_ind
 import seaborn as sns
 from collections import defaultdict
+import plotly.figure_factory as ff
+
+
+def get_single_results(df: pd.DataFrame, df_nm: str) -> dict:
+    
+    #results = defaultdict(lambda: defaultdict())
+    
+    #ncols = len(df.columns)
+    cols = list(df.columns[1:])
+
+    fig = ff.create_distplot([df[c] for c in cols], cols, show_hist=False, show_rug=False)
+      
+    return {'kde': fig}
 
 def get_2fold_comparison(df1: pd.DataFrame, df1_curso: str, df2: pd.DataFrame, df2_curso: str) -> dict:
     
