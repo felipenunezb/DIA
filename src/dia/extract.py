@@ -10,7 +10,7 @@ def get_info(filepath: str) -> tuple:
     establecimiento = df.iloc[0,1]
     curso = df.iloc[1,1]
     
-    return establecimiento, curso
+    return {'establecimiento': establecimiento, 'curso': curso}
 
 
 def get_results(filepath: str) -> pd.DataFrame:
