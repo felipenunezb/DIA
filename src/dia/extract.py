@@ -32,7 +32,7 @@ def get_files_folder(folder_path: str) -> list:
     return files_list
 
 
-def get_all_data(input_files) -> tuple:
+def extract_all_data(input_files) -> tuple:
     '''
     Itera sobre la lista de archivos y extrae la informacion de identificacion y resultados.
     Puede tomar una lista de paths o un folder con los archivos.
