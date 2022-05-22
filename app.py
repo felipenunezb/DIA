@@ -2,10 +2,7 @@ from collections import defaultdict
 import streamlit as st
 import pandas as pd
 
-from dia.extract import get_all_data
-from dia.analyze import get_single_results
-
-from aux_fx import get_dict_references
+from aux_fx import get_data, analyze_single, analyze_compare
 
 st.set_page_config(page_icon="👩‍🏫", page_title="DIA", layout="wide")
 
@@ -13,11 +10,19 @@ OPTION_EXAMPLE = "Revisar ejemplo"
 OPTION_UPLOAD = "Subir archivos"
 SIDEBAR_OPTIONS = [OPTION_UPLOAD, OPTION_EXAMPLE]
 
+ANALYSIS_SINGLE = 'Analizar curso'
+ANALYSIS_COMPARISON = 'Comparar cursos'
+ANALYSIS_EVOLUTION = 'Comparar progresion'
+ANALYSIS_OPTIONS = [ANALYSIS_SINGLE, ANALYSIS_COMPARISON, ANALYSIS_EVOLUTION]
+
 def main():
     
     st.sidebar.title("Seleccione archivo:")
-    
     app_mode = st.sidebar.selectbox("Fuente", SIDEBAR_OPTIONS)
+    
+    #set child multi-element container, for easy cleaning
+    c = st.empty()
+    sc = c.container()
     
     if app_mode == OPTION_UPLOAD:
         
@@ -25,24 +30,23 @@ def main():
         
         if f:
             
-            info_list, results_list = get_all_data(f)
-            pruebas = [fl.name[23 + (fl.name[23:-4].find('_') + 1): 23 + (fl.name[23:-4].find('_') + 1) + (fl.name[23 + (fl.name[23:-4].find('_') + 1):-4].find('_'))] for fl in f]
-                
-            ref_dict = get_dict_references(info_list, pruebas)
+            results_list, ref_dict = get_data(f)
             
-            view_results(ref_dict, results_list)
-        
-        
-def view_results(ref_dict, results_list):
-    
-    curso = st.selectbox(label = 'Curso', options=sorted(list(ref_dict.keys())))
-    prueba = st.selectbox(label = 'Prueba', options=ref_dict[curso].keys())
-    
-    result_ix = ref_dict[curso][prueba]
-    
-    results = get_single_results(df=results_list[result_ix], df_nm=curso)
-    
-    st.plotly_chart(results['kde'])
+            analysis = st.sidebar.selectbox("Analisis", ANALYSIS_OPTIONS)
+            
+            if analysis == ANALYSIS_SINGLE:
+            
+                analyze_single(sc, ref_dict, results_list)
+            
+            elif analysis == ANALYSIS_COMPARISON:
+                
+                analyze_compare(sc, ref_dict, results_list)
+                
+            else:
+                
+                sc.write("WIP")
+
+
     
         
 main()
