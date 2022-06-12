@@ -3,16 +3,24 @@ from scipy.stats import ttest_ind
 import seaborn as sns
 from collections import defaultdict
 import plotly.figure_factory as ff
+import plotly.express as px
 
 
-def get_single_results(df: pd.DataFrame) -> dict:
+def get_single_results(df: pd.DataFrame, prueba) -> dict:
     
     #ejes
     cols = list(df.columns[2:])
 
-    fig = ff.create_distplot([df[c] for c in cols], cols, show_hist=False, show_rug=False)
+    fig = ff.create_distplot([df[c] for c in cols], cols, show_hist=False, show_rug=False, curve_type='normal')
+    
+    melt_df = df.melt(id_vars=['curso', 'Nombre del Estudiante'])
+    melt_df = melt_df.rename(columns={'value': 'Puntaje', 'variable': 'Ejes'})
+    fig2 = px.box(melt_df, x="Puntaje", y=f"curso", color='Ejes', notched=False, orientation='h', title=f"{prueba}")
+    
+    fig.update_layout(width=1100,height=300,margin=dict(l=20, r=20, t=20, b=20))
+    fig2.update_layout(width=1100,height=300,margin=dict(l=20, r=20, t=50, b=20))
       
-    return {'kde': fig}
+    return {'kde': fig, 'box': fig2}
 
 def get_comparison(df: pd.DataFrame):
     
