@@ -45,17 +45,20 @@ def analyze_single(container, ref_dict: dict, results_list: list):
     
     #update select boxes based on selection
     curso = container.selectbox(label = 'Curso', options=sorted(list(ref_dict.keys())))
-    prueba = container.selectbox(label = 'Prueba', options=ref_dict[curso].keys())
+    #prueba = container.selectbox(label = 'Prueba', options=ref_dict[curso].keys())
     
-    #get file index, based on select boxes
-    result_ix = ref_dict[curso][prueba]
+    for prueba in ref_dict[curso].keys():
     
-    #pull dataframe
-    results = get_single_results(df=results_list[result_ix])
-    
-    #plot density
-    container.plotly_chart(results['kde'])
-    
+        #get file index, based on select boxes
+        result_ix = ref_dict[curso][prueba]
+        
+        #pull dataframe
+        results = get_single_results(df=results_list[result_ix], prueba=prueba)
+        
+        #plot density
+        container.plotly_chart(results['box'],width=1100,height=300, use_container_width=True)
+        #container.plotly_chart(results['kde'],width=1100,height=300, use_container_width=True)
+        
     #TODO: scatter plot? clusters?
     
 def analyze_compare(container, ref_dict: dict, results_list: list):
