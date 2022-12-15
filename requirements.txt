@@ -3,3 +3,4 @@ openpyxl==3.0.9
 xlrd==2.0.1
 git+https://github.com/felipenunezb/DIA@progreso#egg=dia
 scipy==1.8.0
+plotly==5.8.0
