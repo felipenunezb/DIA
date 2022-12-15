@@ -19,5 +19,5 @@ setup(
     package_dir={"": "src"},
     packages=find_packages(where="src"),
     python_requires=">=3.8, <4",
-    install_requires=["pandas>1.4,<2", "openpyxl>=3.0.9", "xlrd>=2.0.1", "seaborn>=0.11.2"],
+    install_requires=["pandas>1.4,<2", "openpyxl>=3.0.9", "xlrd>=2.0.1", "seaborn>=0.11.2", "streamlit>=1.15.0"],
 )
