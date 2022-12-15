@@ -1,0 +1,132 @@
+{
+    "5 A": {
+        "LECTURA": {
+            "01. INICIAL": 0,
+            "03. FINAL": 16,
+            "02. INTERMEDIO": 23
+        },
+        "MATEMATICA": {
+            "01. INICIAL": 39,
+            "03. FINAL": 45,
+            "02. INTERMEDIO": 49
+        }
+    },
+    "4 B": {
+        "LECTURA": {
+            "01. INICIAL": 1,
+            "02. INTERMEDIO": 28
+        },
+        "MATEMATICA": {
+            "01. INICIAL": 36,
+            "02. INTERMEDIO": 51
+        }
+    },
+    "7 B": {
+        "LECTURA": {
+            "01. INICIAL": 2,
+            "03. FINAL": 17,
+            "02. INTERMEDIO": 25
+        },
+        "MATEMATICA": {
+            "01. INICIAL": 31,
+            "03. FINAL": 44,
+            "02. INTERMEDIO": 48
+        }
+    },
+    "5 B": {
+        "LECTURA": {
+            "01. INICIAL": 3,
+            "03. FINAL": 13,
+            "02. INTERMEDIO": 27
+        },
+        "MATEMATICA": {
+            "01. INICIAL": 38,
+            "03. FINAL": 41,
+            "02. INTERMEDIO": 50
+        }
+    },
+    "7 A": {
+        "LECTURA": {
+            "01. INICIAL": 4,
+            "03. FINAL": 18,
+            "02. INTERMEDIO": 19
+        },
+        "MATEMATICA": {
+            "01. INICIAL": 35,
+            "03. FINAL": 40,
+            "02. INTERMEDIO": 52
+        }
+    },
+    "3 B": {
+        "LECTURA": {
+            "01. INICIAL": 5,
+            "03. FINAL": 14,
+            "02. INTERMEDIO": 26
+        },
+        "MATEMATICA": {
+            "01. INICIAL": 34,
+            "03. FINAL": 43,
+            "02. INTERMEDIO": 54
+        }
+    },
+    "6 B": {
+        "LECTURA": {
+            "01. INICIAL": 6,
+            "02. INTERMEDIO": 24
+        },
+        "MATEMATICA": {
+            "01. INICIAL": 37,
+            "02. INTERMEDIO": 46
+        }
+    },
+    "8 A": {
+        "LECTURA": {
+            "01. INICIAL": 7
+        },
+        "MATEMATICA": {
+            "01. INICIAL": 30
+        }
+    },
+    "4 A": {
+        "LECTURA": {
+            "01. INICIAL": 8,
+            "02. INTERMEDIO": 20
+        },
+        "MATEMATICA": {
+            "01. INICIAL": 33,
+            "02. INTERMEDIO": 55
+        }
+    },
+    "2 A": {
+        "LECTURA": {
+            "01. INICIAL": 9
+        }
+    },
+    "2 B": {
+        "LECTURA": {
+            "01. INICIAL": 10
+        }
+    },
+    "3 A": {
+        "LECTURA": {
+            "01. INICIAL": 11,
+            "03. FINAL": 15,
+            "02. INTERMEDIO": 22
+        },
+        "MATEMATICA": {
+            "01. INICIAL": 29,
+            "03. FINAL": 42,
+            "02. INTERMEDIO": 47
+        }
+    },
+    "6 A": {
+        "LECTURA": {
+            "01. INICIAL": 12,
+            "02. INTERMEDIO": 21
+        },
+        "MATEMATICA": {
+            "01. INICIAL": 32,
+            "02. INTERMEDIO": 53
+        }
+    }
+}
