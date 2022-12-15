@@ -1,6 +1,6 @@
 from collections import defaultdict
-from dia.extract import extract_all_data
-from dia.analyze import get_single_results, get_comparison, get_progress_comparison, get_report_rows
+from extract import extract_all_data
+from analyze import get_single_results, get_comparison, get_progress_comparison, get_report_rows
 import pandas as pd
 import streamlit as st
 
