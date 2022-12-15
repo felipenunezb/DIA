@@ -1,3 +1,4 @@
 pandas==1.4.2
 openpyxl==3.0.9
 xlrd==2.0.1
+git+https://github.com/felipenunezb/DIA@progreso#egg=dia
